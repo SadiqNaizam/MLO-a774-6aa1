@@ -51,23 +51,19 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
-				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
 				}
+        // Removed sidebar color object as variables are removed from CSS
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+        // This setup allows PRD's 'rounded-md' (0.375rem) to be achieved with 'md' utility,
+        // and PRD's 'rounded' (0.25rem) for buttons with 'sm' utility, when --radius is 0.5rem.
+				lg: 'var(--radius)', // Becomes 0.5rem
+				md: 'calc(var(--radius) - 2px)', // Becomes 0.375rem (6px)
+				sm: 'calc(var(--radius) - 4px)' // Becomes 0.25rem (4px)
 			},
+      fontFamily: {
+        sans: ['Arial', 'sans-serif'], // PRD: typography.primaryFont
+      },
 			keyframes: {
 				'accordion-down': {
 					from: {
